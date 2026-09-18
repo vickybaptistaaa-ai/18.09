@@ -1,144 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DOM Manipulation Exercise</title>
-<style>
-  :root {
-    --page-bg: #f0f0f0;
-    --card-bg: #ffffff;
-    --card-text: #111111;
-    --card-dark-bg: #202020;
-    --card-dark-text: #ffffff;
-    --btn-bg: #0a74f0;
-    --btn-bg-hover: #075fc4;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --page-bg: #2a2a2a;
-    }
-  }
-  :root[data-theme="dark"] {
-    --page-bg: #2a2a2a;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    padding: 32px 24px;
-    min-height: 100vh;
-    background: var(--page-bg);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .app {
-    display: inline-block;
-    max-width: 100%;
-  }
-
-  .card {
-    width: 380px;
-    max-width: 100%;
-    padding: 28px 30px 26px;
-    background: var(--card-bg);
-    color: var(--card-text);
-    border-radius: 14px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    transition: background-color 0.25s ease, color 0.25s ease;
-  }
-
-  .card h1 {
-    margin: 0 0 22px;
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .card p {
-    margin: 0;
-    font-size: 0.95rem;
-  }
-
-  .card.dark {
-    background: var(--card-dark-bg);
-    color: var(--card-dark-text);
-  }
-
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-  }
-
-  button {
-    padding: 9px 14px;
-    border: 0;
-    border-radius: 5px;
-    background: var(--btn-bg);
-    color: #fff;
-    font: inherit;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-  }
-  button:hover { background: var(--btn-bg-hover); }
-  button:focus-visible { outline: 3px solid #9cc7ff; outline-offset: 2px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Cards</title>
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-  <main class="app">
-    <section class="card" id="card">
-      <h1 id="title">Hello, I'm Frontend Dev</h1>
-      <p id="status">Status: Looking for new challenges 🚀</p>
-    </section>
 
-    <div class="actions">
-      <button type="button" id="btn-theme">Change Theme</button>
-      <button type="button" id="btn-title">Modify Title (HTML)</button>
-      <button type="button" id="btn-status">Update Status (Text)</button>
+  <header>
+    <h1>Student Profile Cards</h1>
+  </header>
+
+  <main>
+
+    <div class="card">
+      <h2>Victoria Baptista</h2>
+      <p>Hello! My name is Vicky. I am learning HTML and CSS to create modern websites.</p>
+      <ul>
+        <li>Listening to music</li>
+        <li>Playing soccer</li>
+        <li>Watching movies</li>
+        <li>Learning programming</li>
+      </ul>
     </div>
+
+    <div class="card">
+      <h2>Moria Casan</h2>
+      <p>I enjoy solving problems and building creative projects with code.</p>
+      <ul>
+        <li>Photography</li>
+        <li>Gossips</li>
+        <li>Cooking</li>
+        <li>Traveling</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Tim Payne</h2>
+      <p>I am a design student who loves exploring new tools and building fun side projects.</p>
+      <ul>
+        <li>Football</li>
+        <li>Video games</li>
+        <li>Cycling</li>
+        <li>Photography</li>
+      </ul>
+    </div>
+
   </main>
 
-<script>
-  const card = document.getElementById('card');
-  const title = document.getElementById('title');
-  const status = document.getElementById('status');
+  <footer>
+    <p>Student Profile Cards &mdash; </p>
+  </footer>
 
-  const btnTheme = document.getElementById('btn-theme');
-  const btnTitle = document.getElementById('btn-title');
-  const btnStatus = document.getElementById('btn-status');
-
-  let titleModified = false;
-  let statusUpdated = false;
-
-  function changeTheme() {
-    card.classList.toggle('dark');
-  }
-
-  function modifyTitle() {
-    titleModified = !titleModified;
-    if (titleModified) {
-      title.innerHTML = 'Learning <em>Modern</em> JavaScript!';
-    } else {
-     
-      title.innerText = "Hello, I'm Frontend Dev";
-    }
-  }
-
-
-  function updateStatus() {
-    statusUpdated = !statusUpdated;
-    status.innerText = statusUpdated
-      ? 'Status: Code running successfully!'
-      : 'Status: Looking for new challenges ';
-  }
-
-  btnTheme.addEventListener('click', changeTheme);
-  btnTitle.addEventListener('click', modifyTitle);
-  btnStatus.addEventListener('click', updateStatus);
-</script>
 </body>
 </html>
